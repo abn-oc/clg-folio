@@ -1,0 +1,35 @@
+[
+  {
+    "id": "cs",
+    "title": "Computer Science",
+    "description": "A comprehensive program focusing on algorithms, artificial intelligence, software engineering, and modern computing architectures.",
+    "courses": [
+      "Data Structures and Algorithms",
+      "Artificial Intelligence & Machine Learning",
+      "Web Technologies and Cloud Computing",
+      "Cybersecurity Fundamentals"
+    ]
+  },
+  {
+    "id": "se",
+    "title": "Software Engineering",
+    "description": "Learn the practical aspects of software development, including design patterns, architecture, testing, and agile methodologies.",
+    "courses": [
+      "Advanced Object-Oriented Design",
+      "Software Architecture",
+      "Quality Assurance and Testing",
+      "Agile Project Management"
+    ]
+  },
+  {
+    "id": "ds",
+    "title": "Data Science",
+    "description": "An interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from data.",
+    "courses": [
+      "Statistical Methods for Data Science",
+      "Big Data Analytics",
+      "Deep Learning",
+      "Data Visualization"
+    ]
+  }
+]
