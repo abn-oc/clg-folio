@@ -11,12 +11,10 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         {/* Background Image / Gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 to-primary-800/80 z-10" />
-          <img 
-            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=2000" 
-            alt="College Campus" 
-            className="w-full h-full object-cover"
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-slate-900" />
+          <div className="absolute bottom-12 right-8 text-white/20 text-sm font-mono tracking-widest uppercase z-20 hidden md:block">
+            [ Placeholder: University Campus Background ]
+          </div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -81,8 +79,8 @@ export default function Home() {
             
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" 
-                alt="Students collaborating" 
+                src="https://placehold.co/800x600/e2e8f0/1e293b?text=Campus+Life" 
+                alt="Campus Life Placeholder" 
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-8 -left-8 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl hidden md:block">
