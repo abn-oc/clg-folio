@@ -24,7 +24,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.className} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.classList.add("dark-mode")}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary-500/15">
         <Cursor />
         <Navbar />

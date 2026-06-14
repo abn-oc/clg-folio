@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-slate-50" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#e6e5e1_1px,transparent_1px),linear-gradient(to_bottom,#e6e5e1_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_0%,black,transparent)]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -48,13 +48,13 @@ export default function Home() {
 
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full h-12 sm:h-16 md:h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,132.59,204.27,119,244.54,111.66,283.7,85.25,321.39,56.44Z" className="fill-[#f7f6f3]" />
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,132.59,204.27,119,244.54,111.66,283.7,85.25,321.39,56.44Z" className="fill-surface" />
           </svg>
         </div>
       </section>
 
       {/* About & Stats */}
-      <section className="py-20 sm:py-24 bg-white">
+      <section className="py-20 sm:py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -85,7 +85,7 @@ export default function Home() {
                 alt="Campus Life Placeholder"
                 className="rounded-xl border border-slate-200"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl border border-slate-200 shadow-lg hidden md:block">
+              <div className="absolute -bottom-6 -left-6 bg-surface p-5 rounded-xl border border-slate-200 shadow-lg hidden md:block">
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 bg-amber-50 text-amber-600 rounded-lg">
                     <Award className="h-6 w-6" />

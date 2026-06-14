@@ -17,7 +17,7 @@ export default function Card({ children, className = "", delay = 0 }: CardProps)
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.4, delay, ease: "easeOut" }}
       whileHover={{ y: -3 }}
-      className={`interactive bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 ${className}`}
+      className={`interactive bg-surface rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 ${className}`}
     >
       {children}
     </motion.div>

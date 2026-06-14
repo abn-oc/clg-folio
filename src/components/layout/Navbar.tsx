@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, GraduationCap } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +30,9 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50">
       <nav
         className={`transition-all duration-300 ${
-          scrolled
-            ? "bg-white/80 backdrop-blur-lg shadow-sm border-b border-slate-200/60 py-3"
-            : "bg-transparent py-5"
+            scrolled
+              ? "bg-surface/80 backdrop-blur-lg shadow-sm border-b border-slate-200/60 py-3"
+              : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,9 +61,11 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              <ThemeToggle />
             </div>
 
-            <div className="md:hidden flex items-center">
+            <div className="md:hidden flex items-center gap-1">
+              <ThemeToggle />
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="interactive p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
@@ -83,7 +86,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white border-b border-slate-200 shadow-lg"
+            className="md:hidden bg-surface border-b border-slate-200 shadow-lg"
           >
             <div className="px-4 py-3 space-y-1">
               {navLinks.map((link) => {

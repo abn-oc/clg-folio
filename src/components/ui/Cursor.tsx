@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TRAIL_COUNT = 10;
 
 export default function Cursor() {
+  const [mounted, setMounted] = useState(false);
+  const [touchDevice, setTouchDevice] = useState(false);
   const dotRef = useRef<HTMLDivElement>(null);
   const trailRefs = useRef<(HTMLDivElement | null)[]>(
     Array.from({ length: TRAIL_COUNT }, () => null)
@@ -18,6 +20,15 @@ export default function Cursor() {
   const rafId = useRef(0);
 
   useEffect(() => {
+    setMounted(true);
+    const coarse =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(any-pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+    setTouchDevice(coarse);
+    if (coarse) return;
+
     const onMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
@@ -110,8 +121,11 @@ export default function Cursor() {
     };
   }, []);
 
+  if (!mounted || touchDevice) return null;
+
   return (
     <div
+      className="custom-cursor"
       style={{
         position: "fixed",
         top: 0,
