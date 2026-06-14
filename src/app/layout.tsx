@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Text } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Cursor from "@/components/ui/Cursor";
-import PageTransition from "@/components/ui/PageTransition";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
+const dmSerifText = DM_Serif_Text({
+  variable: "--font-dm-serif-text",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Nestick Tech College Portfolio",
-  description: "Official portfolio and academic overview of our institution.",
+  title: "Nestick Tech College",
+  description:
+    "Official portfolio and academic overview of Nestick Tech College — shaping the next generation of innovators.",
 };
 
 export default function RootLayout({
@@ -23,22 +30,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} h-full antialiased scroll-smooth`}
-      suppressHydrationWarning
+      className={`${inter.variable} ${dmSerifText.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.classList.add("dark-mode")}catch(e){}})();`,
-          }}
-        />
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary-500/15">
+      <body className="min-h-full flex flex-col font-sans bg-stone-50 text-stone-900 selection:bg-navy/10">
         <Cursor />
         <Navbar />
-        <main className="flex-1">
-          <PageTransition>{children}</PageTransition>
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

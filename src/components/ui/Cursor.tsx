@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const TRAIL_COUNT = 10;
 
 export default function Cursor() {
-  const [mounted, setMounted] = useState(false);
-  const [touchDevice, setTouchDevice] = useState(false);
   const dotRef = useRef<HTMLDivElement>(null);
   const trailRefs = useRef<(HTMLDivElement | null)[]>(
     Array.from({ length: TRAIL_COUNT }, () => null)
@@ -20,15 +18,6 @@ export default function Cursor() {
   const rafId = useRef(0);
 
   useEffect(() => {
-    setMounted(true);
-    const coarse =
-      window.matchMedia("(pointer: coarse)").matches ||
-      window.matchMedia("(any-pointer: coarse)").matches ||
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0;
-    setTouchDevice(coarse);
-    if (coarse) return;
-
     const onMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
@@ -52,14 +41,14 @@ export default function Cursor() {
           dot.style.height = "50px";
           dot.style.marginLeft = "-25px";
           dot.style.marginTop = "-25px";
-          dot.style.background = "rgba(91, 104, 214, 0.2)";
-          dot.style.border = "2px solid #5b68d6";
+          dot.style.background = "rgba(30, 58, 95, 0.15)";
+          dot.style.border = "2px solid #1e3a5f";
         } else {
           dot.style.width = "20px";
           dot.style.height = "20px";
           dot.style.marginLeft = "-10px";
           dot.style.marginTop = "-10px";
-          dot.style.background = "#5b68d6";
+          dot.style.background = "#1e3a5f";
           dot.style.border = "none";
         }
       }
@@ -121,8 +110,6 @@ export default function Cursor() {
     };
   }, []);
 
-  if (!mounted || touchDevice) return null;
-
   return (
     <div
       className="custom-cursor"
@@ -143,7 +130,7 @@ export default function Cursor() {
           height: "20px",
           marginLeft: "-10px",
           marginTop: "-10px",
-          background: "#5b68d6",
+          background: "#1e3a5f",
           borderRadius: "50%",
           willChange: "transform",
           transition:
@@ -164,7 +151,7 @@ export default function Cursor() {
             height: "8px",
             marginLeft: "-4px",
             marginTop: "-4px",
-            background: "#5b68d6",
+            background: "#1e3a5f",
             borderRadius: "50%",
             opacity: 0.35,
             willChange: "transform",
