@@ -9,55 +9,55 @@ export const metadata = {
 
 export default function ProgramsPage() {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-white dark:bg-slate-950">
+    <div className="pt-28 pb-20 sm:pb-24 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+        <div className="text-center mb-14 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
             Academic Programs
           </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Discover comprehensive degree programs designed to equip you with the skills demanded by today's rapidly evolving tech industry.
+          <p className="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            Discover comprehensive degree programs designed to equip you with the skills demanded by today&apos;s rapidly evolving tech industry.
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-10">
           {programsData.map((program, index) => (
-            <Card key={program.id} delay={index * 0.1} className="overflow-hidden">
-              <div className="flex flex-col md:flex-row">
-                <div className="p-8 md:p-12 md:w-1/2 bg-slate-50 dark:bg-slate-900 flex flex-col justify-center">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 rounded-xl">
-                      <BookOpen className="h-6 w-6" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
-                      {program.title}
-                    </h2>
+            <Card
+              key={program.id}
+              delay={index * 0.1}
+              className="overflow-hidden divide-y sm:divide-y-0 sm:divide-x divide-slate-100 sm:flex"
+            >
+              <div className="p-6 sm:p-8 lg:p-10 sm:w-1/2 flex flex-col justify-center bg-slate-50">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 bg-primary-50 text-primary-500 rounded-lg">
+                    <BookOpen className="h-5 w-5" />
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                    {program.description}
-                  </p>
-                  <div className="mt-8">
-                    <button className="text-primary-600 font-medium inline-flex items-center hover:underline">
-                      View Curriculum Details &rarr;
-                    </button>
-                  </div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    {program.title}
+                  </h2>
                 </div>
-                
-                <div className="p-8 md:p-12 md:w-1/2 bg-white dark:bg-slate-800">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
-                    Core Courses Include:
-                  </h3>
-                  <ul className="space-y-4">
-                    {program.courses.map((course, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-6 w-6 text-accent-500 shrink-0 mt-0.5" />
-                        <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">
-                          {course}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+                  {program.description}
+                </p>
+                <button className="interactive mt-6 text-sm font-medium text-primary-600 inline-flex items-center gap-1.5 hover:gap-2.5 transition-all self-start hover:underline underline-offset-4">
+                  View Curriculum Details &rarr;
+                </button>
+              </div>
+
+              <div className="p-6 sm:p-8 lg:p-10 sm:w-1/2">
+                <h3 className="text-sm font-semibold text-slate-900 mb-5 uppercase tracking-wider">
+                  Core Courses
+                </h3>
+                <ul className="space-y-3">
+                  {program.courses.map((course, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base text-slate-700">
+                        {course}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Card>
           ))}
