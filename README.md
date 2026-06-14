@@ -2,6 +2,8 @@
 
 A responsive, high-performance portfolio website built with Next.js and Tailwind CSS for Nestick Tech College.
 
+<a href="https://clg-folio.vercel.app/" target="_blank" rel="noopener noreferrer">View Deployed Portfolio</a>
+
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js (App Router)
